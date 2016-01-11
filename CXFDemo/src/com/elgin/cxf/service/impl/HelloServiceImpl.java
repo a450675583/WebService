@@ -6,19 +6,19 @@ import com.elgin.cxf.entities.User;
 import com.elgin.cxf.service.HelloService;
 
 
-@WebService(endpointInterface="com.elgin.cxf.service.HelloService",serviceName="helloCXF")
+@WebService(endpointInterface="com.elgin.cxf.service.HelloService",serviceName="HelloService")
 public class HelloServiceImpl implements HelloService {
 
 	@Override
 	public String sayHello(String text) {
-		
-		return "hello" + text;
+		System.out.println("param text is :" + text);
+		return "hello " + text;
 	}
 
 	@Override
 	public String sayHellloToUser(User user) {
-		
-		return "hello" + user.getName();
+		System.out.println("param user is :" +user);
+		return "hello " + user.getName();
 	}
 
 }
