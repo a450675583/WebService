@@ -1,1 +1,1 @@
-Ê¹ÓÃ Apache CXF·¢²¼µ÷ÓÃwebserviceÊµÀý
+ä½¿ç”¨ CXF å‘å¸ƒè°ƒç”¨ WebServiceç®€å•å®žä¾‹ 
