@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+   <!-- 客户端调用配置 -->
+   <bean id="helloService" class="com.elgin.cxf.service.HelloService"
+                           factory-bean="clientFactory" factory-method="create"/>
+   
+   <bean id="clientFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean" >
+      <property name="serviceClass" value="com.elgin.cxf.service.HelloService"/>
+      <property name="address" value="http://localhost:8080/CXFWebDemo/services/hello"></property>
+   </bean>
+   
+   
+</beans>
