@@ -4,13 +4,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
    
    <!-- 客户端调用配置 -->
+   
+   <!-- service bean配置 -->
    <bean id="helloService" class="com.elgin.cxf.service.HelloService"
                            factory-bean="clientFactory" factory-method="create"/>
    
+   <!-- client 工厂 ，用来产生service实例 -->
    <bean id="clientFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean" >
       <property name="serviceClass" value="com.elgin.cxf.service.HelloService"/>
       <property name="address" value="http://localhost:8080/CXFWebDemo/services/hello"></property>
    </bean>
-   
-   
+
 </beans>
