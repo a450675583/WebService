@@ -7,8 +7,20 @@
 		http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
 		http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd">
   
+   <!-- 
+        1.使用jaxws:endpoint标签的配置发布一个 webservice 
+        2.服务提供实现类为 com.elgin.cxf.service.impl.HelloServiceImpl，用implementor属性配置
+        3.address属性配置外部访问的相对路径
+        4.使用  jaxws:inInterceptors 标签配置2个日志拦截器，用来打印调用时的日志信息
+        5.注意：在此配置文件中，需加入jaxws与soap命名空间
+   -->
    <jaxws:endpoint id="helloService" 
                    implementor="com.elgin.cxf.service.impl.HelloServiceImpl" 
-                   address="/hello"> 
+                   address="/hello" > 
+        <jaxws:inInterceptors >
+		   <bean id="inMessageInterceptor" class="org.apache.cxf.interceptor.LoggingInInterceptor"/>  
+		   <bean id="outLoggingInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>  
+        </jaxws:inInterceptors>
    </jaxws:endpoint>
+   
 </beans>

@@ -3,7 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
    
-   <!-- 服务端发布配置 -->
+   <!-- CXF服务端发布配置 -->
    <import resource="/CXFConfig/CXFServices.xml"/>
    
+   <!-- 项目中其它bean配置 -->
+   <!-- 
+        ....
+    -->
 </beans>

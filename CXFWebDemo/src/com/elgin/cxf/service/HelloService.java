@@ -10,5 +10,5 @@ public interface HelloService {
    
 	public String sayHello(@WebParam(name="text")String text);
 	
-	public String sayHellloToUser(User user);
+	public User getUserByName(String name);
 }
